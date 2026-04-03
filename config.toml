@@ -1,0 +1,39 @@
+# ============================================================
+#   Google Forms Bulk Submitter — Configuration
+# ============================================================
+#
+# HOW TO USE:
+#   1. Copy a pre-filled Google Form link (via "Get pre-filled link")
+#   2. Add it below as a [[forms]] entry with a count and a label
+#   3. Run:  uv run main.py
+#
+# GETTING A PRE-FILLED LINK:
+#   Open your Google Form → top-right menu (⋮) → "Get pre-filled link"
+#   Fill in the answers you want → click "Get link" → copy the URL
+# ============================================================
+
+# ── Timing settings (all values in seconds) ─────────────────
+
+[settings]
+min_pause         = 2.0   # Minimum pause between each submission
+max_pause         = 5.0   # Maximum pause between each submission
+long_pause_every  = 15    # Do a longer pause every N submissions
+long_pause_min    = 10.0  # Minimum long pause duration
+long_pause_max    = 20.0  # Maximum long pause duration
+pause_between_forms = 15.0  # Pause between two different forms
+
+# ── Forms to submit ─────────────────────────────────────────
+# Add as many [[forms]] blocks as you need.
+# url   → paste your pre-filled Google Form link here
+# count → how many times to submit this form
+# label → friendly name shown in the terminal
+
+[[forms]]
+url   = "https://docs.google.com/forms/d/e/PASTE_YOUR_PREFILLED_LINK_HERE/viewform?usp=pp_url&entry.123=your+answer"
+count = 100
+label = "Group A"
+
+[[forms]]
+url   = "https://docs.google.com/forms/d/e/PASTE_YOUR_PREFILLED_LINK_HERE/viewform?usp=pp_url&entry.123=other+answer"
+count = 80
+label = "Group B"
